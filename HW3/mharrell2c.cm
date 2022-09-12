@@ -1,0 +1,88 @@
+//************************************************
+//* HW#3 Problem 2: use for parts a and b and c **
+//************************************************
+
+semaphore mutex1, mutex2, mutex3;
+int counter = 0;
+///////////////////////////////////
+atomic  void say(int id)
+{
+  switch (id)
+  {  case 1:
+     {cout << "Load "; break;}
+     case 2:
+     {cout << "Aim "; break;}
+     case 3:
+     {cout << "Fire "; break;}
+  }
+}
+
+
+///////////////////////////////////
+void ProcessLoad()
+{
+  wait(mutex1);
+  say(1);
+  counter++;
+  if(counter < 4){
+    signal(mutex1);
+  } else{
+    cout << endl;
+    counter = 0;
+    signal(mutex2);
+  }
+}
+
+
+
+///////////////////////////////////
+void ProcessAim()
+{
+  wait(mutex2);
+  say(2);
+  counter++;
+  if(counter < 4){
+    signal(mutex2);
+  } else{
+    cout << endl;
+    counter = 0;
+    signal(mutex3);
+  }
+}
+
+
+///////////////////////////////////
+void ProcessFire()
+{
+  wait(mutex3);
+  say(3);
+  counter++;
+  if(counter < 4){
+    signal(mutex3);
+  } else{
+    cout << endl;
+  }
+}
+
+
+///////////////////////////////////
+main()
+{
+  initialsem(mutex1,1);
+  initialsem(mutex2,0);
+  initialsem(mutex3,0);
+  cobegin {
+    ProcessAim();
+    ProcessAim();
+    ProcessAim();
+    ProcessAim();
+    ProcessFire();
+    ProcessFire();
+    ProcessFire();
+    ProcessFire();
+    ProcessLoad();
+    ProcessLoad();
+    ProcessLoad();
+    ProcessLoad();
+  }
+}

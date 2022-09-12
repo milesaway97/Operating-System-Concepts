@@ -1,0 +1,46 @@
+
+//***********************************************
+//* HW#3 Problem 3                             **
+//* Answer to 3a: 5,6,7,8,9                    **
+//* Answer to 3b: This solution is incorrect   **
+//* since both semaphores are initialized to 1,**
+//* and the processes never signal each other. **
+//***********************************************
+
+int sum;
+semaphore mutex1, mutex2;
+
+///////////////////////////////////
+void One()
+{
+     int i;
+     wait(mutex1);
+     for ( i = 1; i <= 3; i = i + 1)
+          sum = sum + 1;
+     signal(mutex2);
+}
+
+
+///////////////////////////////////
+void Two()
+{
+     int i;
+     wait(mutex2);
+     for ( i = 1; i <= 3; i = i + 1)
+          sum = sum + 2;
+     signal(mutex1);
+}
+
+
+///////////////////////////////////
+main()
+{
+  sum = 0;
+  initialsem(mutex1,1);
+  initialsem(mutex2,0);
+  cobegin {
+    One(); // This will start the 2 processes concurrently
+    Two();
+  }
+  cout << "The sum is " << sum << endl;
+}

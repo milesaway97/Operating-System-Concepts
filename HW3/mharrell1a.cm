@@ -1,0 +1,31 @@
+//******************************************
+//* HW#3 Problem 1: Use for parts a and b **
+//******************************************
+semaphore mutex1, mutex2;
+////////////////////////////////////////////
+void A() {
+   wait(mutex1);
+   cout << "A";
+   signal(mutex2);
+}
+
+////////////////////////////////////////////
+void B() {
+   wait(mutex2);
+   cout << "B";
+   signal(mutex1);
+}
+
+////////////////////////////////////////////
+void main() {
+    initialsem(mutex1,1);
+    initialsem(mutex2,0);
+    cobegin {
+       A();
+       A();
+       A();
+       B();
+       B();
+     }
+     cout << endl;
+}

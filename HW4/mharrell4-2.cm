@@ -1,0 +1,389 @@
+//************************************************
+//* HW#4 Problem 2 *******************************
+//************************************************
+
+semaphore officerNotPresent
+int eating = 0;
+int officerPresent = 0;
+
+///////////////////////////////////
+void Officer()
+{
+
+  Delay();
+ 
+  if(eating == 0)
+  {
+    officerPresent = 1;
+    Delay();
+    officerPresent = 0;
+  } else if(eating > 5)
+  {
+    officerPresent = 1;
+  }
+  
+}
+
+///////////////////////////////////
+void StudentOne()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentTwo()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentThree()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentFour()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentFive()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentSix()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentSeven()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentEight()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentNine()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentTen()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentEleven()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentTwelve()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentThirteen()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentFourteen()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void StudentFifteen()
+{
+  int i;
+  for(i = 0; i < 4; i = i + 1)
+  {
+    Delay();
+    if(officerPresent == 0)
+    {
+      eating++;
+      Delay();
+      if(officerPresent == 0)
+      {
+        eating--;
+      } else 
+      {
+        
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+void Delay (void)
+{
+  int i;
+  int DelayTime;
+  DelayTime = random (DELAY);
+  for (i = 0; i < DelayTime; i++):
+}
+
+///////////////////////////////////
+main()
+{
+  initialsem(officerNotPresent,1);
+
+  cobegin {
+    Officer();
+    StudentOne();
+    StudentTwo();
+    StudentThree();
+    StudentFour();
+    StudentFive();
+    StudentSix();
+    StudentSeven();
+    StudentEight();
+    StudentNine();
+    StudentTen();
+    StudentEleven();
+    StudentTwelve();
+    StudentThirteen();
+    StudentFourteen();
+    StudentFifteen();
+  }
+}

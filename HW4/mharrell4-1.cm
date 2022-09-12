@@ -1,0 +1,115 @@
+//************************************************
+//* HW#4 Problem 1 *******************************
+//************************************************
+
+semaphore intro, one, two, three, four, five;
+int daycount = 5;
+
+///////////////////////////////////
+void Intro()
+{
+  int i;
+  int day;
+  cout << endl;
+  for(i = 0; i < daycount; i = i + 1)
+  {
+    wait(intro);
+    day = i + 1;
+    cout << "On Day ";
+    cout << day;
+    cout << " using Windows, Win10 gave to me" << endl;
+    switch(day)
+    {  case 1:  {signal(one); break;}
+       case 2:  {signal(two); break;}
+       case 3:  {signal(three); break;}
+       case 4:  {signal(four); break;}
+       case 5:  {signal(five); break;}
+    }
+  }
+}
+
+///////////////////////////////////
+void One()
+{
+  int i;
+  for(i = 0; i < daycount; i = i + 1)
+  {
+    wait(one);
+      if(i == 0)
+      {
+         cout << "A blue screen on my PC." << endl;
+      } else
+      {
+        cout << "and a blue screen on my PC." << endl;
+      }
+      cout << endl;
+    signal(intro);
+  }
+}
+
+///////////////////////////////////
+void Two()
+{
+  int i;
+  for(i = 1; i < daycount; i = i + 1)
+  {
+    wait(two);
+      cout << "2 halted printers" << endl;
+    signal(one);
+  }
+}
+
+///////////////////////////////////
+void Three()
+{
+  int i;
+  for(i = 2; i < daycount; i = i + 1)
+  {
+    wait(three);
+      cout << "3 apps not responding" << endl;
+    signal(two);
+  }
+}
+
+///////////////////////////////////
+void Four()
+{
+  int i;
+  for(i = 3; i < daycount; i = i + 1)
+  {
+    wait(four);
+      cout << "4 driver failures" << endl;
+    signal(three);
+  }
+}
+
+///////////////////////////////////
+void Five()
+{
+  int i;
+  for(i = 4; i < daycount; i = i + 1)
+  {
+    wait(five);
+      cout << "5 deadlocked threads" << endl;
+    signal(four);
+  }
+}
+
+///////////////////////////////////
+main()
+{
+  initialsem(intro,1);
+  initialsem(one,0);
+  initialsem(two,0);
+  initialsem(three,0);
+  initialsem(four,0);
+  initialsem(five,0);
+  cobegin {
+    Intro();
+    One();
+    Two();
+    Three();
+    Four();
+    Five();
+  }
+}
